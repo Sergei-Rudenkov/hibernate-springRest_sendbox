@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="model.AnnualFee" table="ANNUAL_FEE">
+        <id name="id" type="int" >
+            <column name="ID"  precision="5" scale="0"/>
+            <generator class="increment"/>
+        </id>
+        <!--
+        <many-to-one name="playerId" insert="false" update="false" class="model.Player" fetch="select">
+            <column name="ID" not-null="true" />
+        </many-to-one>
+        -->
+        <property name="playerId" type="int">
+            <column name="PLAYER_ID" length="20" not-null="true" />
+        </property>
+        <property name="payDate" type="date">
+            <column name="PAY_DATE" length="20" not-null="true" />
+        </property>
+        <property name="paid" type="string">
+            <column name="PAID" length="5" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

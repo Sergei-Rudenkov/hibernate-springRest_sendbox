@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="model.Player" table="PLAYER">
+        <id name="playerId" type="int" >
+            <column name="ID" precision="5" scale="0"/>
+            <generator class="sequence">
+                <param name="sequence">PLAYER_SEQ</param>
+            </generator>
+        </id>
+        <!--
+        <set name="playerId" table="ANNUAL_FEE">
+            <key column="PLAYER_ID"/>
+            <one-to-many class="model.AnnualFee" />
+        </set>
+        -->
+        <property name="name" type="string">
+            <column name="NAME" length="20" not-null="true" />
+        </property>
+        <property name="patronimic" type="string">
+            <column name="PATRONIMIC" length="20" not-null="false" />
+        </property>
+        <property name="suname" type="string">
+            <column name="SUNAME" length="20" not-null="true" />
+        </property>
+        <property name="birthDate" type="date">
+            <column name="BIRTH_DATE" length="20" not-null="true" />
+        </property>
+        <property name="joinDate" type="date">
+            <column name="JOINING_DATE" length="20" not-null="true" />
+        </property>
+    </class>
+
+</hibernate-mapping>
