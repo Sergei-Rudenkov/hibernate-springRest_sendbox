@@ -68,7 +68,7 @@ public class Application {
     @RequestMapping("/get_annual_fee")
     public List getAnnualFee() {
         Session session = HibernateUtil.getSessionFactory().openSession();
-        String hql = "from Player as p left outer join p.playerId as fee"; // <- not checked 
+        String hql = "from AnnualFee as f right outer join f.player as player";
         Query query = session.createQuery(hql);
         return query.list();
     }

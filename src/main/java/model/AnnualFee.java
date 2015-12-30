@@ -9,13 +9,13 @@ import java.util.Date;
  */
 public class AnnualFee {
     private int id;
-    private int playerId;
+    private Player player;
     private Date payDate;
     private String paid;
 
-    public AnnualFee(int id, int playerId, Date payDate, String paid) {
+    public AnnualFee(int id, Player player, Date payDate, String paid) {
         this.id = id;
-        this.playerId = playerId;
+        this.player = player;
         this.payDate = payDate;
         this.paid = paid;
     }
@@ -27,12 +27,12 @@ public class AnnualFee {
         this.id = id;
     }
 
-    public void setPlayerId(int playerId) {
-        this.playerId = playerId;
+    public void setPlayer(Player player) {
+        this.player = player;
     }
 
-    public int getPlayerId() {
-        return playerId;
+    public Player getPlayer() {
+        return player;
     }
 
     public void setPayDate(Date payDate) {

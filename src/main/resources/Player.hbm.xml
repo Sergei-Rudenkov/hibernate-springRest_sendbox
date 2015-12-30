@@ -9,12 +9,7 @@
                 <param name="sequence">PLAYER_SEQ</param>
             </generator>
         </id>
-        <!--
-        <set name="playerId" table="ANNUAL_FEE">
-            <key column="PLAYER_ID"/>
-            <one-to-many class="model.AnnualFee" />
-        </set>
-        -->
+
         <property name="name" type="string">
             <column name="NAME" length="20" not-null="true" />
         </property>

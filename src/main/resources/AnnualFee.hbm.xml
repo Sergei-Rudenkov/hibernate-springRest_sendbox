@@ -7,14 +7,11 @@
             <column name="ID"  precision="5" scale="0"/>
             <generator class="increment"/>
         </id>
-        <!--
-        <many-to-one name="playerId" insert="false" update="false" class="model.Player" fetch="select">
+
+        <many-to-one name="player" insert="false" update="false" class="model.Player" fetch="select">
             <column name="ID" not-null="true" />
         </many-to-one>
-        -->
-        <property name="playerId" type="int">
-            <column name="PLAYER_ID" length="20" not-null="true" />
-        </property>
+
         <property name="payDate" type="date">
             <column name="PAY_DATE" length="20" not-null="true" />
         </property>
