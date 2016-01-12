@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="model.Privilage" table="PRIVILAGE">
+        <id name="id" type="int" >
+            <column name="ID"  precision="5" scale="0"/>
+            <generator class="increment"/>
+        </id>
+
+        <set name="players" table="PLAYER_PRIV"
+             inverse="false" lazy="true" fetch="select">
+            <key>
+                <column name="ID"/>
+            </key>
+            <many-to-many entity-name="model.Player">
+                <column name="PLAYER_ID" not-null="true" />
+            </many-to-many>
+        </set>
+
+        <property name="privilage" type="string">
+            <column name="PRIVILAGE" length="20" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>
+

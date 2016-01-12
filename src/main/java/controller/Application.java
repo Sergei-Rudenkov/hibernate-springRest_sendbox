@@ -72,4 +72,13 @@ public class Application {
         Query query = session.createQuery(hql);
         return query.list();
     }
+
+    @RequestMapping("/get_privilages")
+    public List getPrivilages() {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+//      String hql = "from PlayerPrivilage as pp right outer join pp.privilage as priv right outer join pp.player";
+        String hql = "from Player as p right outer join p.privilages as priv";
+        Query query = session.createQuery(hql);
+        return query.list();
+    }
 }

@@ -1,8 +1,7 @@
 package model;
 
-import org.springframework.context.annotation.Bean;
-
 import java.util.Date;
+import java.util.Set;
 
 /**
  * Created by sergei_rudenkov on 29.12.15.
@@ -15,17 +14,17 @@ public class Player implements java.io.Serializable {
     private String suname;
     private Date birthDate;
     private Date joinDate;
+    private Set<Privilage> privilages;
 
     public Player() {
     }
 
-    public Player(int playerId, String name, String patronimic, String suname, Date birthDate, Date joinDate) {
-        this.playerId = playerId;
-        this.name = name;
-        this.patronimic = patronimic;
-        this.suname = suname;
-        this.birthDate = birthDate;
-        this.joinDate = joinDate;
+    public Set<Privilage> getPrivilages() {
+        return privilages;
+    }
+
+    public void setPrivilages(Set<Privilage> privilages) {
+        this.privilages = privilages;
     }
 
     public void setPlayerId(int playerId) {

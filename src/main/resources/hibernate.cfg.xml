@@ -12,5 +12,7 @@
         <property name="show_sql">true</property>
         <mapping resource="Player.hbm.xml"/>
         <mapping resource="AnnualFee.hbm.xml"/>
+        <mapping resource="PlayerPrivilage.hbm.xml"/>
+        <mapping resource="Privilage.hbm.xml"/>
     </session-factory>
 </hibernate-configuration>
